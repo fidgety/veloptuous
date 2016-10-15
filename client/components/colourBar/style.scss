@@ -1,0 +1,28 @@
+@import 'colours';
+
+.colour-bar {
+    overflow: hidden;
+
+    div {
+        height: 2px;
+        float: left;
+        width: 20%;
+        margin: 9px 0 7px;
+    }
+
+    .colour-bar__a {
+        background: $colour-bar-1;
+    }
+    .colour-bar__b {
+        background: $colour-bar-2;
+    }
+    .colour-bar__c {
+        background: $colour-bar-3;
+    }
+    .colour-bar__d {
+        background: $colour-bar-4;
+    }
+    .colour-bar__e {
+        background: $colour-bar-5;
+    }
+}

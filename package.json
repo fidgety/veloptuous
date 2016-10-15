@@ -1,0 +1,48 @@
+{
+  "name": "veloptuous",
+  "version": "0.0.1",
+  "description": "A react app to help you have a good cycle in the Peak District",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./server/index.js && WEBPACK_ENV=dev ./node_modules/.bin/webpack --config webpack.config.js --watch --inline ",
+    "test": "node ./node_modules/eslint/bin/eslint server/**/*.js client/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fidgety/veloptuous.git"
+  },
+  "author": "Matthew Beasley",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fidgety/veloptuous/issues"
+  },
+  "homepage": "https://github.com/fidgety/veloptuous#readme",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "eslint": "^3.8.0",
+    "eslint-config-airbnb": "^12.0.0",
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.4.1",
+    "extract-text-webpack-plugin": "^1.0.1",
+    "history": "^4.3.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "redux": "^3.6.0",
+    "redux-logger": "^2.7.0",
+    "webpack": "^1.13.2"
+  },
+  "dependencies": {
+    "css-loader": "^0.25.0",
+    "express": "^4.14.0",
+    "express-handlebars": "^3.0.0",
+    "node-sass": "^3.10.1",
+    "sass-loader": "^4.0.2"
+  }
+}

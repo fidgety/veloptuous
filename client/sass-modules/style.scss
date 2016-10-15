@@ -1,0 +1,48 @@
+@import "constants";
+@import "breakpoints";
+
+body {
+    background: #191919;
+}
+
+html, body, #app, {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid transparent;
+    transition: $transition-all;
+}
+
+a:hover {
+    transition: $transition-all;
+    border-bottom-color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.button {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 9999px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 21px;
+    text-transform: uppercase;
+    transition: $transition-all;
+    display: block;
+}
+
+.button:hover {
+    background: #333;
+    transition: $transition-all;
+}
