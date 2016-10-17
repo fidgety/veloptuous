@@ -1,12 +1,11 @@
-const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const config = {
     entry: './client/index.js',
     devtool: 'source-map',
     output: {
-        path: __dirname + '/public',
-        filename: 'bundle.js',
-        publicPath: __dirname + '/build'
+        path: `${__dirname}/build/public`,
+        filename: 'bundle.js'
     },
     module: {
         loaders: [{
@@ -27,7 +26,7 @@ const config = {
         }]
     },
     plugins: [
-        new ExtractTextPlugin("./styles.css")
+        new ExtractTextPlugin('./styles.css')
     ]
 };
 
