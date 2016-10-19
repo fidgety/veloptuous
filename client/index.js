@@ -13,7 +13,7 @@ require('./sass-modules/style.scss');
 ReactDOM.render((
     <Provider store={store}>
         <Router history={browserHistory}>
-            <Route path="/" component={Home}/>
+            <Route path="/" component={Home} />
         </Router>
     </Provider>
 ), document.getElementById('app'));
