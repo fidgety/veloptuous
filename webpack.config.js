@@ -1,10 +1,12 @@
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
+const path = process.env.WEBPACK_ENV === 'dev' ? '/public' : '/build/public';
+
 const config = {
     entry: './client/index.js',
     devtool: 'source-map',
     output: {
-        path: `${__dirname}/build/public`,
+        path: `${__dirname}${path}`,
         filename: 'bundle.js'
     },
     module: {

@@ -12,7 +12,7 @@ export default React.createClass({
                 <ColourBar />
             </div>
             <div className="tag-line">A cycling route guide to help you make the most enjoyable rides in the Peak District.</div>
-            <a className="button start-route" href="/planner">Start a route</a>
+            <a className="button start-route" href="/">Start a route</a>
         </div>);
     }
 });
