@@ -12,5 +12,5 @@ module.exports = (app) => {
     app.set('view engine', 'handlebars');
     app.set('views', `${__dirname}/../views`);
 
-    app.use(express.static('build'));
+    app.use(express.static(`${__dirname}/../../public`));
 };
