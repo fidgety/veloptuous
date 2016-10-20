@@ -9,6 +9,9 @@
         "experimentalObjectRestSpread": true
     },
     "extends": "airbnb",
+    "globals": {
+        google: true
+    },
     "rules": {
         "no-global-assign": 0,
         "no-unsafe-negation": 0,
