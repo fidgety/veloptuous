@@ -1,8 +1,6 @@
 import React from 'react';
 import mainMapOptions from './mapOptions';
 
-require('./style.scss');
-
 const bootUpMap = (element) => {
     const map = new google.maps.Map(
         element,
@@ -31,6 +29,7 @@ module.exports = React.createClass({
     map: undefined,
     domReady(element) {
         this.map = bootUpMap(element);
+        this.props.onMapReady(this.map);
     },
     render() {
         return (

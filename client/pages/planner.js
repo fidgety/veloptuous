@@ -1,6 +1,15 @@
 import React from 'react';
-import Map from '../components/map';
+import { connect } from 'react-redux';
+import PlannerMap from '../components/PlannerMap';
 
-export default () => <div className="full-screen">
-    <Map />
-</div>;
+const select = state => ({
+    locations: state.locations.locations
+});
+
+export default connect(select)(props =>
+    <div className="full-screen">
+        <PlannerMap
+          locations={props.locations}
+        />
+    </div>
+);

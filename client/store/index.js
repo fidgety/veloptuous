@@ -1,11 +1,11 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import createLogger from 'redux-logger';
+import locations from '../reducers/locations';
 
-const reducer = () => ({});
 const serverStore = {};
 
 const reducers = combineReducers({
-    reducer
+    locations
 });
 
 const createStoreWithMiddleware = applyMiddleware(
