@@ -1,5 +1,17 @@
 .marker {
-    width: 25px;
-    height: 50px;
-    background: red;
+    height: 48px;
+    width: 40px;
+    cursor: pointer;
+    transition: all 0.1s linear;
+
+    background: url('/images/pins/cafe.png') no-repeat;
+    background-size: contain;
+
+    &:hover {
+        transform: scale(1.2);
+    }
+
+    &.selected {
+        transform: scale(1.2);
+    }
 }
