@@ -10,9 +10,11 @@
     },
     "extends": "airbnb",
     "globals": {
-        google: true
+        google: true,
+        CustomOverlay: true
     },
     "rules": {
+        "react/prop-types": 0,
         "no-global-assign": 0,
         "no-unsafe-negation": 0,
         "indent": [2, 4],
