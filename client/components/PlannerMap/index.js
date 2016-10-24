@@ -26,6 +26,7 @@ export default React.createClass({
             <div className="full-screen">
                 <GoogleMaps
                   onMapReady={this.mapReady}
+                  onLatLngClicked={this.props.onLatLngClicked}
                 />
                 {markers}
             </div>

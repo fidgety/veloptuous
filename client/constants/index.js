@@ -1,0 +1,2 @@
+export const LAT_LNG_SELECTED = 'LAT_LNG_SELECTED';
+export const LAT_LNG_LOOKUP = 'LAT_LNG_LOOKUP';

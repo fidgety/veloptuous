@@ -1,7 +1,7 @@
 import React from 'react';
 import mainMapOptions from './mapOptions';
 
-const bootUpMap = (element) => {
+const bootUpMap = (element, onLatLngClicked) => {
     const map = new google.maps.Map(
         element,
         mainMapOptions
@@ -12,7 +12,7 @@ const bootUpMap = (element) => {
         });
 
         google.maps.event.addListener(map, 'click', (e) => {
-            alert(e.latLng);
+            onLatLngClicked(e.latLng);
         });
 
         google.maps.event.addListener(map, 'dblclick', () => {
@@ -28,7 +28,7 @@ const bootUpMap = (element) => {
 module.exports = React.createClass({
     map: undefined,
     domReady(element) {
-        this.map = bootUpMap(element);
+        this.map = bootUpMap(element, this.props.onLatLngClicked);
         this.props.onMapReady(this.map);
     },
     render() {
