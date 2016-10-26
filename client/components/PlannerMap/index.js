@@ -1,5 +1,6 @@
 import React from 'react';
 import GoogleMaps from '../GoogleMaps';
+import GooglePolyline from '../GooglePolyline';
 import LocationMarker from '../LocationMarker';
 
 export default React.createClass({
@@ -14,6 +15,7 @@ export default React.createClass({
         });
     },
     render() {
+        console.log(this.props.route);
         const markers = this.props.locations.map(location =>
             <LocationMarker
               key={location.name}
@@ -29,6 +31,10 @@ export default React.createClass({
                   onLatLngClicked={this.props.onLatLngClicked}
                 />
                 {markers}
+                <GooglePolyline
+                  map={this.state.map}
+                  latLngs={this.props.route}
+                />
             </div>
         );
     }
