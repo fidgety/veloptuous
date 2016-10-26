@@ -1,5 +1,6 @@
 import React from 'react';
 import GoogleMaps from '../GoogleMaps';
+import GooglePolyline from '../GooglePolyline';
 import LocationMarker from '../LocationMarker';
 
 export default React.createClass({
@@ -26,8 +27,13 @@ export default React.createClass({
             <div className="full-screen">
                 <GoogleMaps
                   onMapReady={this.mapReady}
+                  onLatLngClicked={this.props.onLatLngClicked}
                 />
                 {markers}
+                <GooglePolyline
+                  map={this.state.map}
+                  latLngs={this.props.route}
+                />
             </div>
         );
     }
