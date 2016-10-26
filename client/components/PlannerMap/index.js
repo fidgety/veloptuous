@@ -15,7 +15,6 @@ export default React.createClass({
         });
     },
     render() {
-        console.log(this.props.route);
         const markers = this.props.locations.map(location =>
             <LocationMarker
               key={location.name}
