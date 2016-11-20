@@ -23,6 +23,9 @@ export default connect(select)(props =>
           onMarkerClick={(name) => {
               props.dispatch(poiSelected(name));
           }}
+          selectedLocation={
+              props.selectedLocation
+          }
         />
         <Undo
           onClick={() => {
