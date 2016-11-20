@@ -21,6 +21,9 @@ export default React.createClass({
               map={this.state.map}
               markerDiv={<div className="marker" />}
               latLng={location.latLng}
+              onClick={() => {
+                  this.props.onMarkerClick(location.name);
+              }}
             />);
 
         return (

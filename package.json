@@ -4,7 +4,8 @@
   "description": "A react app to help you have a good cycle in the Peak District",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./server/index.js && WEBPACK_ENV=dev ./node_modules/.bin/webpack --config webpack.config.js --watch --inline ",
+    "dev-server": "supervisor ./server/index.js",
+    "dev-client": "WEBPACK_ENV=dev ./node_modules/.bin/webpack --config webpack.config.js --watch --inline",
     "test": "eslint server/**/*.js client/**/*.js --config ./.eslintrc",
     "build": "sh build.sh",
     "deploy": "sh deploy.sh"
