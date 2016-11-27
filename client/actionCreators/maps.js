@@ -37,6 +37,8 @@ export const findNearestLatLng = latLng =>
         });
     };
 
+export const poiAddedToRoute = latLng => findNearestLatLng(latLng);
+
 export const findRoute = (startLatLng, endLatLng) =>
     (dispatch) => {
         getDirections(startLatLng, endLatLng).then((route) => {

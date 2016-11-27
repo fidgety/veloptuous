@@ -18,4 +18,8 @@
     &--active {
         opacity: 1;
     }
+
+    &:hover {
+        border-bottom-color: transparent;
+    }
 }
