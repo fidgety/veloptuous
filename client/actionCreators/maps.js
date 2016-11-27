@@ -1,4 +1,4 @@
-import { LAT_LNG_SELECTED, DIRECTIONS_READY, POI_SELECTED, POI_DESELECTED } from '../constants';
+import { LAT_LNG_SELECTED, DIRECTIONS_READY, POI_SELECTED, POI_DESELECTED, POI_ADDED_TO_ROUTE } from '../constants';
 import snapToRoute from '../utils/maps/snapToRoute';
 import getDirections from '../utils/maps/getDirections';
 import routeToLatLngs from '../utils/maps/routeToLatLngs';
@@ -36,6 +36,8 @@ export const findNearestLatLng = latLng =>
             dispatch(latLngSelected(nearestLatLng));
         });
     };
+
+export const poiAddedToRoute = latLng => findNearestLatLng(latLng);
 
 export const findRoute = (startLatLng, endLatLng) =>
     (dispatch) => {

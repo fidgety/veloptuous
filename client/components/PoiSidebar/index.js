@@ -27,11 +27,15 @@ export default function (props) {
         });
         return <li className={classNamesItem} key={item}>{goodForMap[item]}</li>;
     });
+    const onAddRoute = () => {
+        props.onAddRoute(props.latLng);
+    };
 
     return (
         <div className={classNames}>
             <div className="sidebar__close" onClick={props.onClose}>X</div>
             <img src={props.image} />
+            <button className="sidebar__add-to-route" onClick={onAddRoute}>Add to my route</button>
             <h2>{props.name}</h2>
 
             <h3>{props.headline}</h3>

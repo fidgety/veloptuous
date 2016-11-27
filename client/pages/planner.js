@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PlannerMap from '../components/PlannerMap';
 import Undo from '../components/undo';
-import { findNearestLatLng, poiSelected, poiDeselected } from '../actionCreators/maps';
+import { findNearestLatLng, poiSelected, poiDeselected, poiAddedToRoute } from '../actionCreators/maps';
 import undo from '../actionCreators/controls';
 import PoiSidebar from '../components/PoiSidebar';
 
@@ -37,6 +37,9 @@ export default connect(select)(props =>
           {...props.selectedLocation}
           onClose={() => {
               props.dispatch(poiDeselected());
+          }}
+          onAddRoute={(latLng) => {
+              props.dispatch(poiAddedToRoute(latLng));
           }}
         />
     </div>

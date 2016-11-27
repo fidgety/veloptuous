@@ -5,3 +5,4 @@ export const UNDO = 'UNDO';
 
 export const POI_SELECTED = 'POI_SELECTED';
 export const POI_DESELECTED = 'POI_DESELECTED';
+export const POI_ADDED_TO_ROUTE = 'POI_ADDED_TO_ROUTE';

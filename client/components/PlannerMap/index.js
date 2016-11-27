@@ -33,6 +33,8 @@ export default React.createClass({
                 locationLatLng: nextProps.selectedLocation.latLng
             });
         }
+
+        return undefined;
     },
     mapReady(map) {
         this.setState({
