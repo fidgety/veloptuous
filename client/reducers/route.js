@@ -1,6 +1,7 @@
 import { LAT_LNG_SELECTED, DIRECTIONS_READY, UNDO } from '../constants';
 import { findRoute } from '../actionCreators/maps';
 import store from '../store';
+import { calculateDistance } from '../utils/maps/polyline';
 
 const flatten = arrays =>
     arrays.reduce((arr, array) => arr.concat(array), []);
@@ -11,27 +12,32 @@ export default (state, action) => {
             waypoints: [],
             legs: [],
             route: [],
-            routeStarted: false
+            routeStarted: false,
+            distance: 0
         };
     }
 
     if (action.type === UNDO) {
         const waypoints = state.waypoints ? state.waypoints.slice(0, state.waypoints.length - 1) : [];
         const legs = state.legs ? state.legs.slice(0, state.legs.length - 1) : [];
+        const route = flatten(legs);
 
         return Object.assign({}, state, {
             waypoints,
             legs,
-            route: flatten(legs),
-            routeStarted: !!waypoints.length
+            route,
+            routeStarted: !!waypoints.length,
+            distance: calculateDistance(route)
         });
     }
 
     if (action.type === DIRECTIONS_READY) {
         const legs = state.legs.concat([action.latLngs]);
+        const route = flatten(legs);
         return Object.assign({}, state, {
             legs,
-            route: flatten(legs)
+            route,
+            distance: calculateDistance(route)
         });
     }
 

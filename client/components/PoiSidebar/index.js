@@ -46,7 +46,7 @@ export default function (props) {
                 <tbody>
                     <tr>
                         <td className="item">Awkwardness</td>
-                        <td>It's posh, but relaxed, chill.</td>
+                        <td>It&#8217;s posh, but relaxed, chill.</td>
                     </tr>
                     <tr>
                         <td className="item">Bike security</td>
@@ -54,10 +54,17 @@ export default function (props) {
                     </tr>
                     <tr>
                         <td className="item">Cost</td>
-                        <td>Class doesn't come cheap!</td>
+                        <td>Class doesn&#8217;t come cheap!</td>
                     </tr>
                 </tbody>
             </table>
+            <ul>
+                <li>website</li>
+                <li>twitter</li>
+                <li>facebook</li>
+                <li>phone number</li>
+            </ul>
+            <h3>opening hours</h3>
         </div>
     );
 }

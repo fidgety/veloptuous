@@ -1,6 +1,8 @@
 export const LAT_LNG_SELECTED = 'LAT_LNG_SELECTED';
 export const DIRECTIONS_READY = 'DIRECTIONS_READY';
 
+export const ELEVATIONS_UPDATED = 'ELEVATIONS_UPDATED';
+
 export const UNDO = 'UNDO';
 
 export const POI_SELECTED = 'POI_SELECTED';

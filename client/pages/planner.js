@@ -5,12 +5,14 @@ import Undo from '../components/undo';
 import { findNearestLatLng, poiSelected, poiDeselected, poiAddedToRoute } from '../actionCreators/maps';
 import undo from '../actionCreators/controls';
 import PoiSidebar from '../components/PoiSidebar';
+import Distance from '../components/Distance';
 
 const select = state => ({
     locations: state.locations.locations,
     selectedLocation: state.locations.selectedLocation,
     route: state.route.route,
-    routeStarted: state.route.routeStarted
+    routeStarted: state.route.routeStarted,
+    distance: state.route.distance
 });
 
 export default connect(select)(props =>
@@ -33,6 +35,7 @@ export default connect(select)(props =>
           }}
           activated={props.routeStarted}
         />
+        <Distance distance={props.distance} />
         <PoiSidebar
           {...props.selectedLocation}
           onClose={() => {
