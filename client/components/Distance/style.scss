@@ -5,6 +5,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
+    width: 30%;
 }
 
 .gradiant {
@@ -45,5 +46,26 @@
         width: 10px;
         height: 30px;
         background: green;
+    }
+}
+
+.doughnut {
+    background: rgba(0,0,0,0.6);
+    border-radius: 9999px;
+    width: 100%;
+    padding: 5px;
+    position: relative;
+
+    &__distance {
+        color: white;
+        font-size: 50px;
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        transform: translate(-50%, -50%);
+
+        .metric {
+            font-size: 20px;
+        }
     }
 }
