@@ -8,7 +8,7 @@ export default React.createClass({
     getInitialState() {
         return {
             distance: 0,
-            grads: [300, 50, 100]
+            grads: [1, 1, 1, 1, 1]
         };
     },
     componentWillReceiveProps(nextProps) {
@@ -29,16 +29,28 @@ export default React.createClass({
 
         const data = {
             datasets: [{
-                data: [Math.random() * 20, Math.random() * 20, Math.random() * 20],
+                data: [
+                    this.props.percentages.upSeven,
+                    this.props.percentages.upThree,
+                    this.props.percentages.flatish,
+                    this.props.percentages.downThree,
+                    this.props.percentages.downSeven
+                    // 1, 1, 1, 1, 1
+                ],
                 backgroundColor: [
-                    '#FF6384',
-                    '#36A2EB',
-                    '#FFCE56'
+                    'black',
+                    '#CC491A',
+                    // '#EFB85F',
+                    '#FFCE56',
+                    '#618E00',
+                    '#618E00',
                 ],
                 hoverBackgroundColor: [
                     '#FF6384',
                     '#36A2EB',
-                    '#FFCE56'
+                    '#FFCE56',
+                    'blue',
+                    'red'
                 ],
                 borderWidth: 0
             }]

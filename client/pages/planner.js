@@ -12,7 +12,8 @@ const select = state => ({
     selectedLocation: state.locations.selectedLocation,
     route: state.route.route,
     routeStarted: state.route.routeStarted,
-    distance: state.route.distance
+    distance: state.route.distance,
+    percentages: state.route.percentages
 });
 
 export default connect(select)(props =>
@@ -35,7 +36,10 @@ export default connect(select)(props =>
           }}
           activated={props.routeStarted}
         />
-        <Distance distance={props.distance} />
+        <Distance
+          distance={props.distance}
+          percentages={props.percentages}
+        />
         <PoiSidebar
           {...props.selectedLocation}
           onClose={() => {

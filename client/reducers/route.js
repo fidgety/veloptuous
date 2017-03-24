@@ -21,11 +21,11 @@ export default (state, action) => {
             elevationsPerLeg: [],
             elevations: [],
             percentages: {
-                upSeven: 0,
-                upThree: 0,
-                flatish: 0,
-                downThree: 0,
-                downSeven: 0
+                upSeven: 1,
+                upThree: 1,
+                flatish: 1,
+                downThree: 1,
+                downSeven: 1
             }
         };
     }
