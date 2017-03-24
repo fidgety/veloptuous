@@ -8,6 +8,8 @@ const flatten = arrays =>
 
 const calculateDistanceInKm = route => (calculateDistance(route) / 1000);
 
+import { calculatePercentages } from '../utils/maps/elevations';
+
 export default (state, action) => {
     if (!state) {
         return {
@@ -17,7 +19,14 @@ export default (state, action) => {
             routeStarted: false,
             distance: 0,
             elevationsPerLeg: [],
-            elevations: []
+            elevations: [],
+            percentages: {
+                upSeven: 0,
+                upThree: 0,
+                flatish: 0,
+                downThree: 0,
+                downSeven: 0
+            }
         };
     }
 
@@ -26,6 +35,7 @@ export default (state, action) => {
         const elevationsPerLeg = state.elevationsPerLeg ? state.elevationsPerLeg.slice(0, state.elevationsPerLeg.length - 1) : [];
         const legs = state.legs ? state.legs.slice(0, state.legs.length - 1) : [];
         const route = flatten(legs);
+        const elevations = flatten(elevationsPerLeg);
 
         return Object.assign({}, state, {
             waypoints,
@@ -34,7 +44,8 @@ export default (state, action) => {
             routeStarted: !!waypoints.length,
             distance: calculateDistanceInKm(route),
             elevationsPerLeg,
-            elevations: flatten(elevationsPerLeg)
+            elevations,
+            percentages: calculatePercentages(elevations)
         });
     }
 
@@ -65,9 +76,11 @@ export default (state, action) => {
 
     if (action.type === ELEVATIONS_UPDATED) {
         const elevationsPerLeg = state.elevationsPerLeg.concat([action.elevations]);
+        const elevations = flatten(elevationsPerLeg);
         return Object.assign({}, state, {
             elevationsPerLeg,
-            elevations: flatten(elevationsPerLeg)
+            elevations,
+            percentages: calculatePercentages(elevations)
         });
     }
 

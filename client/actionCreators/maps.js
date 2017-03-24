@@ -1,11 +1,9 @@
-import { LAT_LNG_SELECTED, DIRECTIONS_READY, POI_SELECTED, POI_DESELECTED, ELEVATIONS_UPDATED } from '../constants';
+import { LAT_LNG_SELECTED, DIRECTIONS_READY, POI_SELECTED, POI_DESELECTED, ELEVATIONS_UPDATED, SAMPLE_RATE } from '../constants';
 import snapToRoute from '../utils/maps/snapToRoute';
 import getDirections from '../utils/maps/getDirections';
 import routeToLatLngs from '../utils/maps/routeToLatLngs';
 import getLatLngsForElevationLookup from '../utils/maps/sampleLatLngsFromRoute';
 import getElevationsForLatLngs from '../utils/maps/elevations';
-
-const SAMPLE_RATE = 1000;
 
 export const latLngSelected = latLng => (
     {
