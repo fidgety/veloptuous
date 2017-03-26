@@ -42,8 +42,8 @@ export default React.createClass({
                     '#CC491A',
                     // '#EFB85F',
                     '#FFCE56',
-                    '#618E00',
-                    '#618E00',
+                    '#90A955',
+                    '#90A955',
                 ],
                 hoverBackgroundColor: [
                     '#FF6384',

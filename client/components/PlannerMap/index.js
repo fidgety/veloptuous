@@ -44,13 +44,13 @@ export default React.createClass({
         });
     },
     render() {
-        if (this.state.map) {
-            offsetMap(
-                this.state.map,
-                this.state.locationLatLng ? locationOffsetInPixels : 0,
-                0,
-                this.state.locationLatLng || this.state.previousCentre
-            );
+        if (this.state.map && this.state.previousCentre) {
+            // offsetMap(
+            //     this.state.map,
+            //     this.state.locationLatLng ? locationOffsetInPixels : 0,
+            //     0,
+            //     this.state.locationLatLng || this.state.previousCentre
+            // );
         }
 
         const markers = this.props.locations.map(location =>
