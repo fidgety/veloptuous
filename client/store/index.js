@@ -3,12 +3,14 @@ import createLogger from 'redux-logger';
 import thunkMiddleware from 'redux-thunk';
 import locations from '../reducers/locations';
 import route from '../reducers/route';
+import map from '../reducers/map';
 
 const serverStore = {};
 
 const reducers = combineReducers({
     locations,
-    route
+    route,
+    map
 });
 
 const createStoreWithMiddleware = applyMiddleware(

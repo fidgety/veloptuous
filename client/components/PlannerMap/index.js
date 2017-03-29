@@ -2,9 +2,10 @@ import React from 'react';
 import GoogleMaps from '../GoogleMaps';
 import GooglePolyline from '../GooglePolyline';
 import LocationMarker from '../LocationMarker';
-import offsetMap from '../../utils/maps/offsetMapByPixels';
+import StartMarker from '../StartMarker';
+// import offsetMap from '../../utils/maps/offsetMapByPixels';
 
-const locationOffsetInPixels = 200;
+// const locationOffsetInPixels = 200;
 
 export default React.createClass({
     getInitialState() {
@@ -37,6 +38,7 @@ export default React.createClass({
         return undefined;
     },
     mapReady(map) {
+        this.props.onMapBooted(map);
         this.setState({
             map,
             previousCentre: map.getCenter(),
@@ -60,7 +62,7 @@ export default React.createClass({
               markerDiv={<div className="marker" />}
               latLng={location.latLng}
               onClick={() => {
-                  this.props.onMarkerClick(location.name);
+                  this.props.onMarkerClick(location.id);
               }}
             />);
 
@@ -69,6 +71,10 @@ export default React.createClass({
                 <GoogleMaps
                   onMapReady={this.mapReady}
                   onLatLngClicked={this.props.onLatLngClicked}
+                />
+                <StartMarker
+                  route={this.props.route}
+                  map={this.state.map}
                 />
                 {markers}
                 <GooglePolyline

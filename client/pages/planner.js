@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import PlannerMap from '../components/PlannerMap';
 import Undo from '../components/undo';
 import { findNearestLatLng, poiSelected, poiDeselected, poiAddedToRoute } from '../actionCreators/maps';
+import { mapBooted } from '../actionCreators/maps';
+import { getPlacesInformation } from '../actionCreators/places';
 import undo from '../actionCreators/controls';
 import PoiSidebar from '../components/PoiSidebar';
 import Distance from '../components/Distance';
@@ -23,8 +25,12 @@ export default connect(select)(props =>
           onLatLngClicked={latLng =>
             props.dispatch(findNearestLatLng(latLng))}
           route={props.route}
-          onMarkerClick={(name) => {
-              props.dispatch(poiSelected(name));
+          onMapBooted={(map) => {
+              props.dispatch(mapBooted(map));
+          }}
+          onMarkerClick={(id) => {
+              props.dispatch(poiSelected(id));
+              props.dispatch(getPlacesInformation(id, window.map));
           }}
           selectedLocation={
               props.selectedLocation

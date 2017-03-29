@@ -1,10 +1,11 @@
-import { POI_SELECTED, POI_DESELECTED } from '../constants';
+import { POI_SELECTED, POI_DESELECTED, PLACE_LOOKUP_FINISHED } from '../constants';
 
 export default (state, action) => {
     if (!state) {
         return {
             locations: [{
                 latLng: new google.maps.LatLng(53.32454221338231, -1.6524338722229004), // eslint-disable-line
+                id: 'ChIJy_1ThGkqekgRZsFMLc61gd4',
                 name: 'David Mellor Cutlery Factory',
                 headline: 'The classiest cafe in the Peak District, bar none.',
                 type: 'café',
@@ -16,19 +17,27 @@ export default (state, action) => {
                     afterCycle: false
                 }
             }],
-            selectedLocation: undefined
+            selectedLocation: undefined,
+            placesInformation: {}
         };
     }
 
     if (action.type === POI_SELECTED) {
         return Object.assign({}, state, {
-            selectedLocation: state.locations.find(item => item.name === action.name)
+            selectedLocation: state.locations.find(item => item.id === action.id)
+        });
+    }
+
+    if (action.type === PLACE_LOOKUP_FINISHED) {
+        return Object.assign({}, state, {
+            placesInformation: action.placesInformation
         });
     }
 
     if (action.type === POI_DESELECTED) {
         return Object.assign({}, state, {
-            selectedLocation: undefined
+            selectedLocation: undefined,
+            placesInformation: undefined
         });
     }
 

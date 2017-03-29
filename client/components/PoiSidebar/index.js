@@ -16,7 +16,7 @@ export default function (props) {
     const goodForMap = {
         cake: 'cake',
         lunch: 'lunch',
-        pitStop: 'pit stop',
+        pitStop: 'breakfast',
         afterCycle: 'post cycle refuel'
     };
 
