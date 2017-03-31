@@ -2,12 +2,12 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PlannerMap from '../components/PlannerMap';
 import Undo from '../components/undo';
-import { findNearestLatLng, poiSelected, poiDeselected, poiAddedToRoute } from '../actionCreators/maps';
-import { mapBooted } from '../actionCreators/maps';
+import { findNearestLatLng, poiSelected, poiDeselected, poiAddedToRoute, mapBooted } from '../actionCreators/maps';
 import { getPlacesInformation } from '../actionCreators/places';
 import undo from '../actionCreators/controls';
 import PoiSidebar from '../components/PoiSidebar';
 import Distance from '../components/Distance';
+import Header from '../components/Header';
 
 const select = state => ({
     locations: state.locations.locations,
@@ -15,11 +15,13 @@ const select = state => ({
     route: state.route.route,
     routeStarted: state.route.routeStarted,
     distance: state.route.distance,
-    percentages: state.route.percentages
+    percentages: state.route.percentages,
+    openingHours: state.locations.placesInformation.openingHours
 });
 
 export default connect(select)(props =>
     <div className="full-screen">
+        <Header />
         <PlannerMap
           locations={props.locations}
           onLatLngClicked={latLng =>
@@ -48,6 +50,7 @@ export default connect(select)(props =>
         />
         <PoiSidebar
           {...props.selectedLocation}
+          openingHours={props.openingHours}
           onClose={() => {
               props.dispatch(poiDeselected());
           }}

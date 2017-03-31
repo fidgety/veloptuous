@@ -102,4 +102,12 @@
         margin-top: -40px;
         position: relative;
     }
+
+    .opening-times {
+        padding: 10px;
+        &__day {
+            width: 100px;
+            display: inline-block;
+        }
+    }
 }

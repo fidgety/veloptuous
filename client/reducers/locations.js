@@ -18,7 +18,9 @@ export default (state, action) => {
                 }
             }],
             selectedLocation: undefined,
-            placesInformation: {}
+            placesInformation: {
+                openingHours: []
+            }
         };
     }
 
@@ -30,14 +32,27 @@ export default (state, action) => {
 
     if (action.type === PLACE_LOOKUP_FINISHED) {
         return Object.assign({}, state, {
-            placesInformation: action.placesInformation
+            placesInformation: {
+                openingHours: action.placeInformation.opening_hours.weekday_text.map((item) => {
+                    const split = item.split(':');
+                    const day = split[0];
+                    split.shift();
+                    const times = split.join(':');
+                    return {
+                        day,
+                        times
+                    };
+                })
+            }
         });
     }
 
     if (action.type === POI_DESELECTED) {
         return Object.assign({}, state, {
             selectedLocation: undefined,
-            placesInformation: undefined
+            placesInformation: {
+                openingHours: []
+            }
         });
     }
 

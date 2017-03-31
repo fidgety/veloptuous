@@ -1,3 +1,4 @@
+
 import React from 'react';
 import cs from 'classnames';
 
@@ -31,6 +32,13 @@ export default function (props) {
         props.onAddRoute(props.latLng);
     };
 
+    const openingHours = props.openingHours.map(item =>
+        <li key={item.day + item.times}>
+            <span className="opening-times__day">{item.day}</span>
+            {item.times}
+        </li>
+    );
+
     return (
         <div className={classNames}>
             <div className="sidebar__close" onClick={props.onClose}>X</div>
@@ -44,10 +52,6 @@ export default function (props) {
             </ul>
             <table>
                 <tbody>
-                    <tr>
-                        <td className="item">Awkwardness</td>
-                        <td>It&#8217;s posh, but relaxed, chill.</td>
-                    </tr>
                     <tr>
                         <td className="item">Bike security</td>
                         <td>100% safe</td>
@@ -65,6 +69,7 @@ export default function (props) {
                 <li>phone number</li>
             </ul>
             <h3>opening hours</h3>
+            <ul className="opening-times">{openingHours}</ul>
         </div>
     );
 }
