@@ -5,7 +5,7 @@ import Undo from '../components/undo';
 import { findNearestLatLng, poiSelected, poiDeselected, poiAddedToRoute, mapBooted } from '../actionCreators/maps';
 import { getPlacesInformation } from '../actionCreators/places';
 import undo from '../actionCreators/controls';
-import PoiSidebar from '../components/PoiSidebar';
+import PoiSidebar from '../components/PoiSidebar2';
 import Distance from '../components/Distance';
 import Header from '../components/Header';
 
