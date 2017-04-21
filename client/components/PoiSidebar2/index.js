@@ -62,7 +62,7 @@ export default function (props) {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td className="item">Bike security</td>
+                                    <td className="item fa fa-lock">Bike security</td>
                                     <td>100% safe</td>
                                 </tr>
                                 <tr>
@@ -72,10 +72,10 @@ export default function (props) {
                             </tbody>
                         </table>
                         <ul>
-                            <li>website</li>
-                            <li>twitter</li>
-                            <li>facebook</li>
-                            <li>phone number</li>
+                            <li><a href="http://davidmellor.com" target="_blank"><span className="fa fa-link" /></a></li>
+                            <li><a href="http://twitter.com" target="_blank"><span className="fa fa-twitter" /></a></li>
+                            <li><a href="http://facebook.com" target="_blank"><span className="fa fa-facebook" /></a></li>
+                            <li className="fa fa-phone">+44 1457 862888</li>
                         </ul>
                         <button className="sidebar2__add-to-route" onClick={onAddRoute}>Add to my route</button>
                     </div>
