@@ -13,6 +13,7 @@ const select = state => ({
     locations: state.locations.locations,
     selectedLocation: state.locations.selectedLocation,
     route: state.route.route,
+    waypoints: state.route.waypoints,
     routeStarted: state.route.routeStarted,
     distance: state.route.distance,
     percentages: state.route.percentages,
@@ -27,6 +28,7 @@ export default connect(select)(props =>
           onLatLngClicked={latLng =>
             props.dispatch(findNearestLatLng(latLng))}
           route={props.route}
+          waypoints={props.waypoints}
           onMapBooted={(map) => {
               props.dispatch(mapBooted(map));
           }}

@@ -11,50 +11,15 @@ export default React.createClass({
     getInitialState() {
         return {
             map: undefined,
-            previousCentre: undefined,
-            locationLatLng: undefined
         };
-    },
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.selectedLocation && this.state.locationLatLng === undefined) {
-            return this.setState({
-                previousCentre: this.state.map.getCenter(),
-                locationLatLng: nextProps.selectedLocation.latLng
-            });
-        }
-
-        if (!nextProps.selectedLocation) {
-            return this.setState({
-                locationLatLng: undefined
-            });
-        }
-
-        if (nextProps.selectedLocation.latLng !== this.state.locationLatLng) {
-            this.setState({
-                locationLatLng: nextProps.selectedLocation.latLng
-            });
-        }
-
-        return undefined;
     },
     mapReady(map) {
         this.props.onMapBooted(map);
         this.setState({
-            map,
-            previousCentre: map.getCenter(),
-            locationLatLng: undefined
+            map
         });
     },
     render() {
-        if (this.state.map && this.state.previousCentre) {
-            // offsetMap(
-            //     this.state.map,
-            //     this.state.locationLatLng ? locationOffsetInPixels : 0,
-            //     0,
-            //     this.state.locationLatLng || this.state.previousCentre
-            // );
-        }
-
         const markers = this.props.locations.map(location =>
             <LocationMarker
               key={location.name}
@@ -73,7 +38,7 @@ export default React.createClass({
                   onLatLngClicked={this.props.onLatLngClicked}
                 />
                 <StartMarker
-                  route={this.props.route}
+                  waypoints={this.props.waypoints}
                   map={this.state.map}
                 />
                 {markers}
