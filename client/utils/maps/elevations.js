@@ -1,5 +1,3 @@
-import { SAMPLE_RATE } from '../../constants';
-
 const elevationsService = new google.maps.ElevationService();
 
 export default samplePoints => new Promise((resolve, reject) => {
@@ -30,7 +28,7 @@ export const calculatePercentages = (elevations) => {
         }
         const prevElevation = array[index - 1].elevation;
         const rise = prevElevation - elevation.elevation;
-        const percent = (rise / SAMPLE_RATE) * 100;
+        const percent = (rise / window.SAMPLE_RATE) * 100;
 
         if (percent > 7) {
             percentagesTally.upSeven += SAMPLE_RATE;

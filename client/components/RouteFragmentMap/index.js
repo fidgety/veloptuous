@@ -1,7 +1,6 @@
 import React from 'react';
 import GoogleMaps from '../GoogleMaps';
 import GooglePolyline from '../GooglePolyline';
-import LocationMarker from '../LocationMarker';
 import StartMarker from '../StartMarker';
 
 export default React.createClass({
@@ -11,24 +10,13 @@ export default React.createClass({
         };
     },
     mapReady(map) {
-        window.SAMPLE_RATE = 1000;
+        window.SAMPLE_RATE = 100;
         this.props.onMapBooted(map);
         this.setState({
             map
         });
     },
     render() {
-        const markers = this.props.locations.map(location =>
-            <LocationMarker
-              key={location.name}
-              map={this.state.map}
-              markerDiv={<div className="marker" />}
-              latLng={location.latLng}
-              onClick={() => {
-                  this.props.onMarkerClick(location.id);
-              }}
-            />);
-
         return (
             <div className="full-screen">
                 <GoogleMaps
@@ -39,7 +27,6 @@ export default React.createClass({
                   waypoints={this.props.waypoints}
                   map={this.state.map}
                 />
-                {markers}
                 <GooglePolyline
                   map={this.state.map}
                   latLngs={this.props.route}

@@ -9,7 +9,7 @@ export const POI_SELECTED = 'POI_SELECTED';
 export const POI_DESELECTED = 'POI_DESELECTED';
 export const POI_ADDED_TO_ROUTE = 'POI_ADDED_TO_ROUTE';
 
-export const SAMPLE_RATE = 1000;
+export const SAMPLE_RATE = 100;
 
 export const MAP_BOOTED = 'MAP_BOOTED';
 

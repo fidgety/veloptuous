@@ -1,4 +1,4 @@
-import { LAT_LNG_SELECTED, DIRECTIONS_READY, POI_SELECTED, POI_DESELECTED, ELEVATIONS_UPDATED, SAMPLE_RATE, MAP_BOOTED } from '../constants';
+import { LAT_LNG_SELECTED, DIRECTIONS_READY, POI_SELECTED, POI_DESELECTED, ELEVATIONS_UPDATED, MAP_BOOTED } from '../constants';
 import snapToRoute from '../utils/maps/snapToRoute';
 import getDirections from '../utils/maps/getDirections';
 import routeToLatLngs from '../utils/maps/routeToLatLngs';
@@ -49,7 +49,7 @@ export const elevationsUpdated = elevations => ({
 });
 
 export const getElevationsForLeg = latLngs => (dispatch) => {
-    let latLngsForLookup = getLatLngsForElevationLookup(latLngs, 0, SAMPLE_RATE); //eslint-disable-line
+    let latLngsForLookup = getLatLngsForElevationLookup(latLngs, 0, window.SAMPLE_RATE); //eslint-disable-line
     getElevationsForLatLngs(latLngsForLookup).then((elevations) => {
         dispatch(elevationsUpdated(elevations));
     });

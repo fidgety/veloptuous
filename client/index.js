@@ -7,6 +7,7 @@ import store from './store';
 
 import Home from './pages/home';
 import Planner from './pages/planner';
+import AddRouteFragment from './pages/AddRouteFragment';
 
 require('./sass-modules/reset.scss');
 require('./sass-modules/style.scss');
@@ -16,6 +17,7 @@ ReactDOM.render((
         <Router history={browserHistory}>
             <Route path="/" component={Home} />
             <Route path="/planner" component={Planner} />
+            <Route path="/add-route-fragment" component={AddRouteFragment} />
         </Router>
     </Provider>
 ), document.getElementById('app'));
