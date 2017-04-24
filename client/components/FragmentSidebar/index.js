@@ -55,30 +55,21 @@ export default React.createClass({
             },
             tooltips: {
                 enabled: false
+            },
+            point: {
+                display: false
             }
         };
 
         const data = {
             labels: elevations,
             datasets: [{
-                label: 'My First dataset',
                 fill: true,
                 lineTension: 0.1,
-                backgroundColor: 'white',
-                borderColor: 'rgba(75,192,192,1)',
+                backgroundColor: 'rgba(255,255,255,0.1)',
+                borderColor: 'rgba(255,255,255,0.8)',
                 borderCapStyle: 'butt',
-                borderDash: [],
-                borderDashOffset: 0.0,
-                borderJoinStyle: 'miter',
-                pointBorderColor: 'rgba(75,192,192,1)',
-                pointBackgroundColor: '#fff',
-                pointBorderWidth: 1,
-                pointHoverRadius: 5,
-                pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-                pointHoverBorderColor: 'rgba(220,220,220,1)',
-                pointHoverBorderWidth: 2,
-                pointRadius: 1,
-                pointHitRadius: 10,
+                pointRadius: 0,
                 data: elevations
             }]
         };
@@ -94,8 +85,9 @@ export default React.createClass({
                     <input type="text" placeholder="headline" name="title" onChange={this.onChange} />
                     {photos}
                     <div
+                      className="fragment-sidebar__add-photo"
                       onClick={this.add}
-                    >add photo</div>
+                    >+</div>
                     <div className="fragment-sidebar__elevations">
                         <Line data={data} options={options} redraw={false} width={100} height={40} />
                     </div>
@@ -106,6 +98,7 @@ export default React.createClass({
                       }), null, 4)}
                       cols="80"
                       rows="30"
+                      readOnly="true"
                     />
                 </form>
             </div>
