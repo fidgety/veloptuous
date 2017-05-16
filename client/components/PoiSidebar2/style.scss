@@ -3,7 +3,7 @@
 
 .sidebar2 {
     &--visible {
-        display: flex;
+        display: block;
     }
 
     &__close {
@@ -24,7 +24,7 @@
     justify-content: left;
     position: absolute;
     top: 50px;
-    height: 300px;
+    height: 100%;
     width: calc(100% - 40px);
     background: rgba(0, 0, 0, 0.8);
     color: white;
@@ -59,6 +59,7 @@
             font-size: 17px;
             text-transform: uppercase;
             margin-bottom: 10px;
+            margin-top: 20px;
         }
 
         &-day {
@@ -75,19 +76,19 @@
     .other-info {
         display: flex;
         flex-direction: column;
-        padding-left: 20px;
     }
 
     .ot {
-        display: flex;
+        display: block;
     }
 
     .ot2 {
-        padding-left: 20px;
+        padding-top: 20px;
     }
 
     .headline {
         font-size: 30px;
+        padding-top: 20px;
         padding-bottom: 20px;
         font-style: italic;
         font-family: 'Montserrat';
@@ -98,6 +99,8 @@
         justify-content: space-between;
 
         &__item {
+            border-radius: 9999px;
+            margin-right: 10px;
             text-align: center;
             flex-grow: 1;
             background: $j + 20%;
@@ -112,7 +115,10 @@
 
     .links {
         a:hover {
-            text-decoration: none;
+            border-bottom-color: transparent;
+            span {
+                transform: scale(1.2);
+            }
         }
     }
 
@@ -154,5 +160,33 @@
         background: $j;
         color: white;
         font-size: 20px;
+    }
+
+    @media (min-width: $x-small) {
+        &--visible {
+            display: flex;
+        }
+
+        .other-info {
+            padding-left: 20px;
+
+            h3 {
+                margin-top: 0;
+            }
+
+            .headline {
+                padding-top: 0;
+            }
+
+            .ot {
+                display: flex;
+            }
+
+            .ot2 {
+                padding-top: 0;
+                padding-left: 20px;
+            }
+        }
+        height: 300px;
     }
 }
