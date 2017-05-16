@@ -96,6 +96,7 @@
     .good-for {
         display: flex;
         justify-content: space-between;
+
         &__item {
             text-align: center;
             flex-grow: 1;
@@ -107,5 +108,51 @@
                 opacity: 1;
             }
         }
+    }
+
+    .links {
+        a:hover {
+            text-decoration: none;
+        }
+    }
+
+    .fl {
+        float: left;
+    }
+
+    .item {
+        height: 30px;
+        width: 30px;
+        text-align: center;
+        line-height: 30px;
+        background: #ff5165;
+        border-radius: 9999px;
+        display: inline-block;
+        color: white;
+        margin-top: 10px;
+        margin-right: 10px;
+
+        &.fa-twitter {
+            background: #00aced;
+        }
+
+        &.fa-facebook {
+            background: #3B5998;
+        }
+
+        &.fa-phone {
+            background: #6EEB83;
+        }
+    }
+
+    &__add-to-route {
+        font-family: 'Montserrat';
+        width: 100px;
+        height: 100px;
+        margin-left: 30px;
+        border-radius: 9999px;
+        background: $j;
+        color: white;
+        font-size: 20px;
     }
 }

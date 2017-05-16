@@ -62,23 +62,42 @@ export default function (props) {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td className="item fa fa-lock">Bike security</td>
+                                    <td className="item">
+                                        <span className="icon fa fa-lock" />
+                                    </td>
                                     <td>100% safe</td>
                                 </tr>
                                 <tr>
-                                    <td className="item">Cost</td>
+                                    <td className="item">
+                                        <span className="icon fa fa-gbp" />
+                                    </td>
                                     <td>Class doesn&#8217;t come cheap!</td>
                                 </tr>
                             </tbody>
                         </table>
-                        <ul>
-                            <li><a href="http://davidmellor.com" target="_blank"><span className="fa fa-link" /></a></li>
-                            <li><a href="http://twitter.com" target="_blank"><span className="fa fa-twitter" /></a></li>
-                            <li><a href="http://facebook.com" target="_blank"><span className="fa fa-facebook" /></a></li>
-                            <li className="fa fa-phone">+44 1457 862888</li>
+                        <ul className="links">
+                            <li>
+                                <a href="http://davidmellor.com" target="_blank">
+                                    <span className="item fa fa-link" />davidmellor.com
+                                </a>
+                            </li>
+                            <li className="fl">
+                                <a href="http://twitter.com" target="_blank">
+                                    <span className="item fa fa-twitter" />
+                                </a>
+                            </li>
+                            <li className="fl">
+                                <a href="http://facebook.com" target="_blank">
+                                    <span className="item fa fa-facebook" />
+                                </a>
+                            </li>
+                            <li className="fl">
+                                <span className="item fa fa-phone" />
+                                +44 1457 862888
+                            </li>
                         </ul>
-                        <button className="sidebar2__add-to-route" onClick={onAddRoute}>Add to my route</button>
                     </div>
+                    <button className="sidebar2__add-to-route" onClick={onAddRoute}>Add to my route</button>
                 </div>
             </div>
             <div className="sidebar2__close" onClick={props.onClose}>X</div>

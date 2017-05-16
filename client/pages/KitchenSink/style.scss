@@ -1,0 +1,61 @@
+@import 'colours';
+
+.ks {
+    width: 800px;
+    margin: 0 auto;
+
+    &__header {
+        height: 200px;
+        position: relative;
+        background: rgba(0,0,0,0.8);
+    }
+
+    &__section {
+        margin-top: 32px;
+        background: rgba(0,0,0,0.8);
+    }
+
+    &__header-logo {
+        width: 300px;
+        padding-top: 32px;
+        padding-left: 32px;
+        display: none;
+    }
+
+    &__header-title {
+        font-family: 'Lato';
+        position: absolute;
+        bottom: 32px;
+        right: 32px;
+        color: white;
+        font-size: 40px;
+    }
+
+    &__heading {
+        font-size: 30px;
+        font-family: 'Lato';
+        padding: 16px;
+        border-bottom: 1px solid $j;
+        color: white;
+    }
+
+    .carousel {
+        background: pink;
+        overflow: hidden;
+
+        .slider-wrapper {
+            width: 100%;
+        }
+
+        .slider {
+            display: flex;
+        }
+
+        .slide {
+            flex-direction: column;
+            flex-flow: column;
+            min-width: 100%;
+            position: relative;
+        }
+    }
+}
